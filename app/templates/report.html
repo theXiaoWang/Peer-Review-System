@@ -1,0 +1,142 @@
+<title>Reporting Issues</title>
+<!-- Start of No.8 Reporting Issues By Xiao W -->
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <h2>Reporting Issues</h2>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <h4><legend class="border-bottom mb-4">Your Info</legend></h4>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        {{ form.firstName.label(class="form-control-label") }}
+                        {% if form.firstName.errors %}
+                            {{ form.firstName(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.firstName.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.firstName(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ form.lastName.label(class="form-control-label") }}
+                        {% if form.lastName.errors %}
+                            {{ form.lastName(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.lastName.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.lastName(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form.studentNumber.label(class="form-control-label") }}
+                        {% if form.studentNumber.errors %}
+                            {{ form.studentNumber(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.studentNumber.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.studentNumber(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        {{ form.email.label(class="form-control-label") }}
+                        {% if form.email.errors %}
+                            {{ form.email(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.email(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group col-md-6"></div>
+
+                <h4><legend class="border-bottom mb-4">Who Do You Want To Report</legend></h4>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        {{ form.firstNameReport.label(class="form-control-label") }}
+                        {% if form.firstNameReport.errors %}
+                            {{ form.firstNameReport(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.firstNameReport.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.firstNameReport(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ form.lastNameReport.label(class="form-control-label") }}
+                        {% if form.lastNameReport.errors %}
+                            {{ form.lastNameReport(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.lastNameReport.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.lastNameReport(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form.studentNumberReport.label(class="form-control-label") }}
+                        {% if form.studentNumberReport.errors %}
+                            {{ form.studentNumberReport(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.studentNumberReport.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.studentNumberReport(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="my-1 mr-2" for="reason">Reason</label>
+                    <select class="custom-select my-1 mr-sm-2" name="reason" id="reason">
+                      <option selected value="Non-engagement">Non-engagement</option>
+                      <option value="Significant Disagreement">Significant Disagreement</option>
+                      <option value="Verbal Abuse">Verbal Abuse</option>
+                      <option value="Sick">Sick</option>
+                      <option value="Others">Others</option>
+                    </select>
+                    <div class="form-group col-md-6"></div>
+                    <div class="form-group col-md-15">
+                        {{ form.reasonSpecified.label(class="form-control-label") }}
+                        {% if form.reasonSpecified.errors %}
+                            {{ form.reasonSpecified(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.reasonSpecified.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.reasonSpecified(class="form-control", id="exampleFormControlTextarea1", rows="5") }}
+                        {% endif %}
+                    </div>
+                  </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+<!-- End of No.8 Reporting Issues By Xiao W -->

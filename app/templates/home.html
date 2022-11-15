@@ -1,0 +1,33 @@
+<title>Home</title>
+{% extends "layout.html" %}
+{% block content %}
+    <section id="one" class="wrapper special">
+        <div class="inner">
+            <header class="major">
+                <h2>Main Features</h2>
+            </header>
+            <div class="features">
+                <div class="feature">
+                    <h4><img class="icon" src="../static/assets/UI/contribution_form.png" alt="">
+                    <a href="#">PEER / SELF-ASSESSMENT CONTRIBUTION FORM</a></h4>
+                </div>
+                <div class="feature">
+                    <h4><img class="icon" src="../static/assets/UI/alter.png" alt="">
+                    <a href="{{ url_for('contribution_form')}}">ALTER PEER / SELF-ASSESSMENT CONTRIBUTION FORM</a></h4>
+                </div>
+                <div class="feature">
+                    <h4><img class="icon" src="../static/assets/UI/percentage.png" alt="">
+                    <a href="#">CALCULATE % of TEAM MARK</a></h4>
+                </div>
+                <div class="feature">
+                    <h4><img class="icon" src="../static/assets/UI/review.png" alt="">
+                    <a href="#">TEACHING-STAFF REVIEW CONTRIBUTION FORMS FOR ANOMALIES</a></h4>
+                </div>
+                <div class="feature">
+                    <h4><img class="icon" src="../static/assets/UI/report.png" alt="">
+                    <a href="{{ url_for('report') }}">REPORTING ISSUES</a></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

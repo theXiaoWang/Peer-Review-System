@@ -1,0 +1,145 @@
+<!-- Kestrina Santikai Contribution Form-->
+
+<title>ALTER PEER / SELF-ASSESSMENT CONTRIBUTION FORM</title>
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <h2>ALTER PEER / SELF-ASSESSMENT CONTRIBUTION FORM</h2>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <h4><legend class="border-bottom mb-4">Your Info</legend></h4>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        {{ form.firstName.label(class="form-control-label") }}
+                        {% if form.firstName.errors %}
+                            {{ form.firstName(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.firstName.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.firstName(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ form.lastName.label(class="form-control-label") }}
+                        {% if form.lastName.errors %}
+                            {{ form.lastName(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.lastName.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.lastName(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form.studentNumber.label(class="form-control-label") }}
+                        {% if form.studentNumber.errors %}
+                            {{ form.studentNumber(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.studentNumber.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.studentNumber(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        {{ form.email.label(class="form-control-label") }}
+                        {% if form.email.errors %}
+                            {{ form.email(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.email(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group col-md-6"></div>
+
+                <h4><legend class="border-bottom mb-4">Who Do You Want To Fill This Form For</legend></h4>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        {{ form.firstNameReport.label(class="form-control-label") }}
+                        {% if form.firstNameReport.errors %}
+                            {{ form.firstNameReport(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.firstNameReport.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.firstNameReport(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ form.lastNameReport.label(class="form-control-label") }}
+                        {% if form.lastNameReport.errors %}
+                            {{ form.lastNameReport(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.lastNameReport.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.lastNameReport(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{ form.studentNumberReport.label(class="form-control-label") }}
+                        {% if form.studentNumberReport.errors %}
+                            {{ form.studentNumberReport(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.studentNumberReport.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.studentNumberReport(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="my-1 mr-2" for="reason"> Choose the most appropriate statement from the ones below </label><br>
+                    <input type = "radio" id = "firstReason" name ="contribution">
+                    <label for "firstReason"> This student was a main component of the project </label><br>
+                    <input type = "radio" id = "secondReason" name ="contribution">
+                    <label for "secondReason"> Took part in most of the meetings and his/her code was correct </label><br>
+                    <input type = "radio" id = "thirdReason" name ="contribution">
+                    <label for "thirdReason"> Correct code , missed most of the meetings </label><br>
+                    <input type = "radio" id = "fourthReason" name ="contribution">
+                    <label for "fourthReason"> A code full of bugs , he/she hardly came to the meetings </label><br>
+                    <input type = "radio" id = "fifthReason" name ="contribution">
+                    <label for "fifthReason"> This studdent was a ghost </label><br>
+                    <div class="form-group col-md-6"></div>
+                    <div class="form-group col-md-15">
+                        {{ form.reasonSpecified.label(class="form-control-label") }}
+                        {% if form.reasonSpecified.errors %}
+                            {{ form.reasonSpecified(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.reasonSpecified.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.reasonSpecified(class="form-control", id="exampleFormControlTextarea1", rows="5") }}
+                        {% endif %}
+                    </div>
+                  </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
